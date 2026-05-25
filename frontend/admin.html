@@ -1,0 +1,8 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin Dashboard</title><link rel="stylesheet" href="/assets/styles.css"></head><body><nav class="nav"><a class="brand" href="/">THE FINNISH PARADIGM&#8482;</a><div class="navlinks"><a href="/courses.html">Courses</a><a href="/resources.html">Resources</a><a href="/assessment.html">Assessments</a><a href="/booking.html">Book Demo</a><a href="/legal.html">Legal</a><a href="/admin.html">Admin</a><span id="authSlot"></span></div></nav><section class="section" id="adminContent"><h1>Admin Dashboard</h1><p class="lead">Secure administrative view for bookings, users, enrollments, item bank, intervention cases and school implementation monitoring.</p><div id="adminStats" class="grid"></div><h2>Bookings</h2><table class="table"><thead><tr><th>Name</th><th>Email</th><th>Audience</th><th>Date</th><th>Status</th></tr></thead><tbody id="bookings"></tbody></table></section><footer class="footer"><b>The Finnish Paradigm&#8482;</b><p>Research-informed teacher certification, early intervention systems, and school transformation architecture.</p></footer><script src="/assets/app.js"></script><script>
+(function(){
+  var u = user();
+  if (!u || (u.role !== 'admin' && u.role !== 'manager')) {
+    document.getElementById('adminContent').innerHTML = '<div class="notice" style="max-width:520px;margin:80px auto"><h2>Admin Access Required</h2><p>Please <a href="/login.html">log in</a> with an admin or manager account to access this dashboard.</p></div>';
+  }
+})();
+</script></body></html>
